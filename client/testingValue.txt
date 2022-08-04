@@ -1,0 +1,110 @@
+fix xp issue
+change logo
+make video
+host
+after register store value in localstorage 
+store code in localstorage
+
+
+2
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n;
+  cin >> n;
+
+  if ( n % 2 == 0)
+    cout << n << " is even.";
+  else
+    cout << n << " is odd.";
+
+  return 0;
+}
+
+
+
+5
+1 2 3 4 5
+15
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto &i : a) 
+    cin >> i;
+ 
+    // Find the sum of the vector
+    cout << accumulate(a.begin(), a.end(), 0);
+    return 0;
+}
+
+5
+1 2 3 4 5
+120
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (auto &i : a) 
+        cin >> i;
+    
+    long long mul = 1;
+    for(auto i: a)
+        mul *= i;
+
+    cout << mul;
+
+    return 0;
+}
+
+
+55
+Yes
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int num;
+    cin >> num;
+    
+    // Checking divisibility
+    if ((num % 5 == 0) && (num % 11 == 0))
+        cout << "Yes";
+    else
+        cout << "No";
+    return 0;
+}
+
+7
+Number is Prime.
+
+#include <iostream> 
+using namespace std;
+
+int main() {  
+  int n, i, m=0, flag=0;  
+  cin >> n;  
+  m=n/2;  
+
+  for(i = 2; i <= m; i++) {  
+      if(n % i == 0) {  
+          cout<<"No";  
+          flag=1;  
+          break;  
+      }  
+  }  
+
+  if (flag==0)  
+      cout << "Yes"; 
+ 
+  return 0;  
+}  
