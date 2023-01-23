@@ -36,17 +36,17 @@ const roomSchema = new Schema(
     ],
     point: { type: Number, default: 10 },
     ownerId: { type: Schema.Types.ObjectId, ref: "User" },
-    url: { type: String, required: true },
     isContestOver: { type: Boolean, default: false, required: false },
-    speakers: {
-      type: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "User",
-        },
-      ],
-      required: false,
-    },
+    // url: { type: String, required: true },
+    // speakers: {
+    //   type: [
+    //     {
+    //       type: Schema.Types.ObjectId,
+    //       ref: "User",
+    //     },
+    //   ],
+    //   required: false,
+    // },
   },
   {
     timestamps: true,

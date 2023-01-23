@@ -39,6 +39,7 @@ const Room = () => {
     startMinute: null,
     startSecond: null,
   });
+  console.log(room);
   const [lastTry, setLastTry] = useState(false);
   const [challangeStartedUserName, setChallangeStatedUserName] = useState(null);
   const [winnerDetails, setWinnerDetails] = useState(null);
@@ -317,7 +318,7 @@ const Room = () => {
                   targetDate={dateTimeAfterThreeDays}
                 />
               )}
-              {!lastTry && (
+              {!lastTry && room && !room.isContestOver && (
                 <div className="p-3 border-t border-slate-100 border-opacity-20">
                   <button
                     onClick={challangeTimeDetails}
@@ -325,6 +326,13 @@ const Room = () => {
                   >
                     Start
                   </button>
+                </div>
+              )}
+              {room && room.isContestOver && (
+                <div className="text-center">
+                  <span className="text-red-600 font-bold text-lg text-opacity-90">
+                    Contest is Over !!!
+                  </span>
                 </div>
               )}
             </div>

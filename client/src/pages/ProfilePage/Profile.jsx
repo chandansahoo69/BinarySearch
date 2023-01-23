@@ -84,13 +84,16 @@ const Profile = () => {
                   src={userData ? userData.avatar : ""}
                   alt="user_avatar"
                 />
-                {userData && !matchUser() && (
-                  <RiImageEditFill
-                    onClick={openImageModal}
-                    className="absolute bottom-7 right-16 cursor-pointer hover:text-white ease-in-out duration-300 text-slate-200"
-                    size={30}
-                  />
-                )}
+                {userData &&
+                  !matchUser() &&
+                  userData &&
+                  userData.email !== "dummyuser@gmail.com" && (
+                    <RiImageEditFill
+                      onClick={openImageModal}
+                      className="absolute bottom-7 right-16 cursor-pointer hover:text-white ease-in-out duration-300 text-slate-200"
+                      size={30}
+                    />
+                  )}
               </div>
               <div className="felx flex-col justify-center items-center">
                 <p className="role font-bold text-lg font-mono text-blue-600 px-1 rounded shadow-md">
@@ -228,15 +231,17 @@ const Profile = () => {
         </div>
 
         {/* Delete Account Button */}
-        {userId === user.id && (
-          <button
-            className="absolute right-4 top-4 gap-1 flex sm:inline-flex justify-center items-center capitalize bg-red-600 hover:bg-red-700 active:bg-red-700 focus-visible:ring ring-blue-300 text-white font-semibold text-center rounded-xl outline-none transition duration-100 px-4 py-2"
-            onClick={() => openDeleteModal()}
-          >
-            <RiDeleteBin4Fill className="text-xl" />
-            Delete Account
-          </button>
-        )}
+        {userId === user.id &&
+          userData &&
+          userData.email !== "dummyuser@gmail.com" && (
+            <button
+              className="absolute right-4 top-4 gap-1 flex sm:inline-flex justify-center items-center capitalize bg-red-600 hover:bg-red-700 active:bg-red-700 focus-visible:ring ring-blue-300 text-white font-semibold text-center rounded-xl outline-none transition duration-100 px-4 py-2"
+              onClick={() => openDeleteModal()}
+            >
+              <RiDeleteBin4Fill className="text-xl" />
+              Delete Account
+            </button>
+          )}
       </div>
 
       {showImageUpdateModal && (
