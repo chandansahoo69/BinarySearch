@@ -1,6 +1,6 @@
 import axios from "axios";
 const API = axios.create({
-  baseURL: "http://localhost:5500",
+  baseURL: process.env.REACT_APP_API_URL,
   withCredentials: true,
   headers: {
     "Content-type": "application/json",
@@ -61,7 +61,7 @@ API.interceptors.response.use(
       try {
         //call with axios not with API axios instance
         //bcz next time new instance will created and you cannot get the old one's data and methods
-        await axios.get(`http://localhost:5500/api/refresh`, {
+        await axios.get(`${process.env.REACT_APP_API_URL}/api/refresh`, {
           withCredentials: true, //for sending the cookies
         });
 

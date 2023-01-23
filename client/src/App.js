@@ -22,6 +22,8 @@ function App() {
   // Get the loading state
   const { loading } = useLoading();
 
+  //   console.log(process.env.REACT_APP_API_URL);
+
   return loading ? (
     <Loader message="Loading, Please wait" />
   ) : (

@@ -10,9 +10,12 @@ export function useLoading() {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5500/api/refresh`, {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/refresh`,
+          {
+            withCredentials: true,
+          }
+        );
         dispatch(setAuth(data));
         setLoading(false);
       } catch (err) {

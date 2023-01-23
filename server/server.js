@@ -20,7 +20,7 @@ const roomService = require("./services/room-service");
 //set the webSocket server
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 const corsOption = {
   credentials: true,
-  origin: ["http://localhost:3000"],
+  origin: ["*"],
 };
 
 app.use(cors(corsOption));
